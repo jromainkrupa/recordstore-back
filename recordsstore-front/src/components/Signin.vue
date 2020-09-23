@@ -1,6 +1,5 @@
 <template>
   <div class="max-w-sm m-auto my-8">
-    {{ email }}
     <div class="border p-10 border-grey-light shadow rounded">
       <h3 class="text-2xl mb-6 text-grey-darkest">Sign In</h3>
       <form @submit.prevent="signin">
@@ -10,28 +9,21 @@
           <label for="email" class="label">E-mail Address</label>
           <input type="email" v-model="email" class="input" id="email" placeholder="andy@web-crunch.com">
         </div>
-        <a-button type=sqds size=dsqsd>
         <div class="mb-6">
           <label for="password" class="label">Password</label>
           <input type="password" v-model="password" class="input" id="password" placeholder="Password">
         </div>
-        <button type="submit" class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-dark block w-full py-4 text-white items-center justify-center">Sign In</button>
+        <button type="submit" class="button mb-4">Sign In</button>
+        <div class="my-4"><router-link to="/signup" class="secondary-button">Sign up</router-link></div>
 
-        <div class="my-4"><router-link to="/signup" class="link-grey">Sign up</router-link></div>
       </form>
-      <SignupComponent type="primary"/>
     </div>
   </div>
 </template>
 
 <script>
-
-import SignupComponent from "@/components/signup"
 export default {
   name: 'Signin',
-  components: {
-    SignupComponent
-  },
   data () {
     return {
       email: '',
@@ -41,9 +33,6 @@ export default {
   },
   created () {
     this.checkSignedIn()
-    setInterval(()=> {
-      this.email = this.email += "a"
-    }, 2000)
   },
   updated () {
     this.checkSignedIn()
