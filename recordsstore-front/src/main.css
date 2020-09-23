@@ -1,0 +1,13 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.input:focus {
+  @apply outline-none bg-white;
+}
+
+.label {
+  @apply block uppercase tracking-wide text-xs font-bold mb-2;
+}
